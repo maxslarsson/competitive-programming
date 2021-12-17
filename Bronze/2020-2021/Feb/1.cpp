@@ -11,21 +11,25 @@ struct Rel {
 };
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
 
     vector<Rel> rels;
     map<string, int> cows = {{"Bessie", 0}};
-    vector<string> years = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig", "Rat"};
+    vector<string> years = {"Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog",
+                            "Pig", "Rat"};
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         string first_cow, direction, zodiac, last_cow, empty;
         cin >> first_cow >> empty >> empty >> direction >> zodiac >> empty >> empty >> last_cow;
         int dir = direction == "next" ? 1 : -1;
         rels.push_back({first_cow, dir, zodiac, last_cow});
     }
 
-    for (const auto& r : rels) {
+    for (const auto &r: rels) {
         int years_before_bessie = cows[r.last_cow];
 
         int count = years_before_bessie;

@@ -6,20 +6,23 @@ int DX[] = {0, 0, 1, -1};
 int DY[] = {1, -1, 0, 0};
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+
     int n;
     cin >> n;
     map<pair<int, int>, int> neighbors;
     set<pair<int, int>> points;
     set<pair<int, int>> comfy;
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int x, y;
         cin >> x >> y;
 
         points.insert({x, y});
 
         int neigh = 0;
-        for (int j=0; j<4;j++) {
+        for (int j = 0; j < 4; j++) {
             int newx = x + DX[j];
             int newy = y + DY[j];
             pair<int, int> adj = {newx, newy};
