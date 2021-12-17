@@ -8,6 +8,7 @@ set(CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fsanitize=address")
 include_directories($ENV{HOME}/include)
 
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS RELATIVE "${CMAKE_CURRENT_LIST_DIR}" "Bronze/*.cpp" "Silver/*.cpp" "Gold/*.cpp" "Platinum/*.cpp")
+
 foreach (sourcefile ${SRC_FILES})
     string(REPLACE "/" "_" EXECNAME ${sourcefile})
     string(REPLACE ".cpp" "" EXECNAME ${EXECNAME})
