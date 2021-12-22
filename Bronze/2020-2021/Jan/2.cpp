@@ -15,13 +15,6 @@ bool remove_first(vector<int> &ids, bool even) {
     return false;
 }
 
-int recursive(vector<int> &ids, bool even = true) {
-
-
-    // 1. If even, or odd number, choose that, continue with ids - the one chosen
-    // 2. If even, find two odd numbers, choose them, if odd, choose an odd number
-}
-
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
